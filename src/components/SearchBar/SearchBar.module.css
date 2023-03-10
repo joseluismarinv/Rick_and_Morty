@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'futurama';
+    src: url(../../assets/futurama-title-font_[allfont.es].ttf);
+    font-weight: normal;
+    font-style: normal;
+  }
+
+.input{
+    background-color: rgba(0, 0, 0, 0.1);
+    border: 1px solid white;
+    font-size: 18px;
+    margin-right: 5px;
+    color: white;
+    font-family: 'futurama';
+    padding: 4px;
+}
+
+.buttonStyle{
+    background-color: rgba(0, 0, 0, 0.1);
+    border: 1px solid white;
+    color: white;
+    font-size: 18px;
+    border-radius: 5px;
+    padding: 5px 20px 5px 20px;
+    font-family: 'futurama';
+}

@@ -1,0 +1,86 @@
+@font-face {
+    font-family: 'shlop';
+    src: url(../../assets/shlop\ rg.ttf);
+    font-weight: normal;
+    font-style: normal;
+  }
+
+@font-face {
+    font-family: 'homer';
+    src: url(../../assets/Homer_Simpson_Revised.ttf);
+    font-weight: normal;
+    font-style: normal;
+  }
+
+.container{
+    background-image: url('../../assets/tarjeta-rym.jpg');
+    background-size: 100% 100%;
+    width: fit-content;
+    padding: 1em;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid white;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 20px 10px rgba(31,0,217,1);
+}
+
+.container:hover{
+    transition: 0.4s;
+    box-shadow: 0px 0px 30px 25px rgba(0,99,217,0.9);
+}
+
+.topName{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    margin-bottom: 0px;
+    padding: 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 100%;
+}
+
+.name{
+    font-family: 'shlop';
+    font-size: 32px;
+    color: black;
+    margin: 0;
+    padding: 5px;
+
+    
+}
+
+.closeButton{
+    border: 5px;
+    background-color: #e762d7;
+    width: fit-content;
+    height: fit-content;
+    border-top-right-radius: 10px;
+    transform: translate(1%, -105%);
+}
+
+.closeButton:hover{
+    box-shadow: 6px 9px 16px -1px rgba(0,0,0,0.69);
+}
+
+.img{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+
+h2{
+    font-family: 'homer';
+    font-size: 30px;
+    color: black;
+    margin: 5px;
+    padding: 8px;
+    background-color: white;
+    border-radius: 10px;
+    width: 94%;
+}
