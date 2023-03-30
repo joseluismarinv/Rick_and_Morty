@@ -1,0 +1,12 @@
+.App {
+   text-align: center;
+   display: flex;
+   flex-wrap: wrap;
+}
+
+@font-face {
+   font-family: 'get_schwifty';
+   src: url(./assets/fonts/get_schwifty.ttf);
+   font-weight: bold;
+   font-style: bold;
+ }

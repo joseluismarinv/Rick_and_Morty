@@ -1,0 +1,10 @@
+.card{
+    width: 35rem;
+    border: 1px solid black ;
+    border-radius: 1.5rem;
+}
+
+.card__botones{
+    display: flex;
+    justify-content: space-between;
+}
