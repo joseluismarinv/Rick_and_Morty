@@ -1,3 +1,4 @@
+import "./Form.css";
 import React from "react";
 import { useState } from "react";
 import validate from "./Validation";
@@ -32,27 +33,47 @@ const Form = ({ login }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="username">Username</label>
-      <input
-        type="text"
-        name="username"
-        value={userData.username}
-        onChange={handleInputChange}
-      />
-      {errors.username && <p style={{ color: "red" }}>{errors.username}</p>}
+    <div className="main">
+      <h1>Rick and Morty</h1>
+      <div className="conten__login">
+        <form onSubmit={handleSubmit}>
+          <div className="ingreso">
+            <input
+              className="entrada"
+              type="text"
+              name="username"
+              value={userData.username}
+              onChange={handleInputChange}
+            />
+            <label className="letras" htmlFor="username">
+              Username
+            </label>
+            {errors.username && <p className="error">{errors.username}</p>}
+          </div>
 
-      <label htmlFor="password">Password</label>
-      <input
-        type="password"
-        name="password"
-        value={userData.password}
-        onChange={handleInputChange}
-      />
-      {errors.password && <p style={{ color: "red" }}>{errors.password}</p>}
+          <div className="ingreso">
+            <input
+              className="entrada"
+              type="password"
+              name="password"
+              value={userData.password}
+              onChange={handleInputChange}
+            />
+            <label className="letras" htmlFor="password">
+              Password
+            </label>
+            {errors.password && <p className="error">{errors.password}</p>}
+          </div>
 
-      <button>Login</button>
-    </form>
+          <button className="boton__login">
+            Login<span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </form>
+      </div>
+    </div>
   );
 };
 

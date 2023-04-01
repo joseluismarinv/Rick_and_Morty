@@ -1,5 +1,6 @@
 import "./Cards.css";
 import Card from "../Card/Card";
+import videoLogin from "../../assets/videos/Rick-And-Morty-Schwifty-Live-Wallpaper.mp4";
 
 export default function Cards({ characters, onClose }) {
   return (
@@ -15,6 +16,10 @@ export default function Cards({ characters, onClose }) {
           onClose={() => onClose(id)}
         />
       ))}
+
+      <video autoPlay loop muted>
+        <source src={videoLogin} type="video/mp4" />
+      </video>
     </div>
   );
 }

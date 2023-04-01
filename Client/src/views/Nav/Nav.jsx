@@ -6,20 +6,26 @@ export default function navigation({ onSearch }) {
   return (
     <div className="contenedor">
       <div className="navegacion">
-        <h1>Rick and Morty</h1>
+        <div className="navegacion__titulo--blur">
+          <Link to="/home">
+            <h1 className="navegacion__titulo">Rick and Morty</h1>
+          </Link>
+        </div>
         <nav className="navegacion__enlaces">
-          <Link to="/">Log Out</Link>
+          <Link to="/">
+            <span className="navegacion__enlace">Log Out</span>
+          </Link>
 
           <Link to="/home">
-            <span>Home</span>
+            <span className="navegacion__enlace">Home</span>
           </Link>
 
           <Link to="/about">
-            <span>About</span>
+            <span className="navegacion__enlace">About</span>
           </Link>
 
           <Link to="/favorites">
-            <span>Favorites</span>
+            <span className="navegacion__enlace">Favorites</span>
           </Link>
           <SearchBar onSearch={onSearch} />
         </nav>

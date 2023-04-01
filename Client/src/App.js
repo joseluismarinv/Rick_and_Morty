@@ -58,7 +58,7 @@ function App() {
   };
 
   return (
-    <div className="App" style={{ padding: "25px" }}>
+    <div className="App">
       {location.pathname !== "/" && <Nav onSearch={onSearch} />}
       <Routes>
         <Route path="/" element={<Form login={login} />} />
