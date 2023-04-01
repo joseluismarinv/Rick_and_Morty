@@ -1,0 +1,4 @@
+.contenedor__favorites {
+  display: flex;
+  flex-wrap: wrap;
+}

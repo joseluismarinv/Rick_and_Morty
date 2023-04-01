@@ -26,17 +26,17 @@ function App() {
       setAccess(true);
       navigate("/home");
     } else {
-      alert('El usuario o contraseña son incorrectos')      
+      alert("El usuario o contraseña son incorrectos");
     }
   };
 
   useEffect(() => {
-    access && navigate("/home");
-  }, [access, navigate]);
+    !access && navigate("/home");
+  }, [access]);
 
   const onSearch = (character) => {
     const URL_BASE = "http://localhost:3001";
-//  const API_KEY = "523152ea7309.99921b71b91580867845";
+    //  const API_KEY = "523152ea7309.99921b71b91580867845";
 
     if (characters.find((char) => char.id === character)) {
       return alert("El personaje ya está agregado");
@@ -61,15 +61,15 @@ function App() {
     <div className="App" style={{ padding: "25px" }}>
       {location.pathname !== "/" && <Nav onSearch={onSearch} />}
       <Routes>
+        <Route path="/" element={<Form login={login} />} />
         <Route
           path="/home"
           element={<Cards onClose={onClose} characters={characters} />}
         />
         <Route path="/about" element={<About />} />
-        <Route path="/favorites" element={<Favorites/>}/>
+        <Route path="/favorites" element={<Favorites />} />
         <Route path="/detail/:detailId" element={<Detail />} />
-        <Route path="/*" element={<Error />} />
-        <Route path="/" element={<Form login={login} />} />
+        <Route path="*" element={<Error />} />
       </Routes>
     </div>
   );

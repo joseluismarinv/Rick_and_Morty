@@ -1,9 +1,17 @@
-import {ADD_FAVORITE, CLEAN_DETAIL, DELETE_FAVORITE, FILTER, GET_CHARACTER_DETAIL, ORDER} from './actions/actions_type'
+import {
+  CLEAN_FAVORITES,
+  CLEAN_DETAIL,
+  DELETE_FAVORITE,
+  FILTER,
+  GET_CHARACTER_DETAIL,
+  GET_FAVORITES,
+  ORDER,
+} from "./actions/actions_type";
 
 const initialState = {
   myFavorites: [],
   allCharacters: [],
-  characterDetail:{},
+  characterDetail: {},
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -12,19 +20,19 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         characterDetail: action.payload,
-      }
+      };
 
     case CLEAN_DETAIL:
       return {
         ...state,
         characterDetail: {},
-      }
+      };
 
-    case ADD_FAVORITE:
+    case GET_FAVORITES:
       return {
         ...state,
-        myFavorites: [...state.allCharacters, action.payload],
-        allCharacters: [...state.allCharacters, action.payload]
+        myFavorites: [...state.myFavorites, ...action.payload],
+        allCharacters: [...state.myFavorites, ...action.payload],
       };
 
     case DELETE_FAVORITE:
@@ -35,24 +43,38 @@ const rootReducer = (state = initialState, action) => {
         ),
       };
 
-    case FILTER:
-      const allCharactersFiltered = state.allCharacters.filter(
-        char => char.gender === action.payload)
+    case CLEAN_FAVORITES:
       return {
         ...state,
-        myFavorites: action.payload === 'All Characters'
-        ? [...state.allCharacters]
-        : allCharactersFiltered
-      }
-    
+        myFavorites: [],
+        allCharacters: [],
+      };
+
+    case FILTER:
+      const allCharactersFiltered = state.allCharacters.filter(
+        (char) => char.gender === action.payload
+      );
+      return {
+        ...state,
+        myFavorites:
+          action.payload === "All Characters"
+            ? [...state.allCharacters]
+            : allCharactersFiltered,
+      };
+
     case ORDER:
       return {
         ...state,
-        myFavorites: [...state.allCharacters.sort((a,b) =>{
-          if(action.payload === 'descendente'){ return b.id - a.id}
-          else {return a.id - b.id}
-        })]
-      }
+        myFavorites: [
+          ...state.allCharacters.sort((a, b) => {
+            if (action.payload === "descendente") {
+              return b.id - a.id;
+            } else {
+              return a.id - b.id;
+            }
+          }),
+        ],
+      };
 
     default:
       return {

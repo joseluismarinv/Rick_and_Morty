@@ -1,40 +1,42 @@
-html{
+html {
   box-sizing: border-box;
   font-size: 62.5%;
 }
 
-*,*:before, *:after{
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
 body {
   font-size: 16px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-img{
+img {
   width: 100%;
 }
 
-a{
+a {
   text-decoration: none;
 }
 
-h1{
-  font-family: 'get_schwifty';
+h1 {
+  font-family: "get_schwifty";
   font-size: 5rem;
   margin: 0;
-  color:#63cbfb;
+  color: #63cbfb;
   -webkit-text-stroke: 2px #000;
-  text-shadow: -8px -8px 1px #f0e14a, 8px 8px 1px #f0e14a, -8px 8px 1px #f0e14a, 8px -8px 1px #f0e14a;
- 
+  text-shadow: -8px -8px 1px #f0e14a, 8px 8px 1px #f0e14a, -8px 8px 1px #f0e14a,
+    8px -8px 1px #f0e14a;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
