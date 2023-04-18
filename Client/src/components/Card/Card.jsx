@@ -39,7 +39,7 @@ const Card = ({ id, name, species, gender, image, onClose }) => {
   }, [favorites]);
 
   return (
-    <div className="card">
+    <div className="card bubbles">
       <div className="card__botones">
         {isFav ? (
           <button onClick={handleFavorite}>❤️</button>
@@ -48,15 +48,21 @@ const Card = ({ id, name, species, gender, image, onClose }) => {
         )}
         <button onClick={onClose}>X</button>
       </div>
+      <div className="card__nombre">
+        <Link to={`/detail/${id}`}>
+          <h2>{name}</h2>
+        </Link>
+      </div>
 
-      <Link to={`/detail/${id}`}>
-        <h2 className="card__nombre">{name}</h2>
-      </Link>
       <div className="card__imagen">
         <img src={image} alt={`Imagen de ${name}`} />
       </div>
       <h2>Specie: {species}</h2>
       <h2>Gender: {gender}</h2>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
   );
 };
